@@ -1,0 +1,219 @@
+{
+  "main": {
+    "id": "c48c1f78b986ec61",
+    "type": "split",
+    "children": [
+      {
+        "id": "1a192267d8664cdd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0aa65a89bc695c2a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "State of the Art/DeepL.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "DeepL"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "65bce92314eb2384",
+    "type": "split",
+    "children": [
+      {
+        "id": "7ce099665013977c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "982e9121254b5461",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTimeReverse",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3c0538aa0bbce945",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "81cb6037e1fe0304",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "96b9829f3b570c99",
+    "type": "split",
+    "children": [
+      {
+        "id": "8b719c9307a3c844",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8faea5aebb1defc1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "ce58b57a8ed01364",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "2803dd9e837a8e02",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "829ac3bd46dcaacf",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "floating": {
+    "id": "ad6bb944e902c0b8",
+    "type": "floating",
+    "children": [
+      {
+        "id": "4a60e222e0ae64ae",
+        "type": "window",
+        "children": [
+          {
+            "id": "5e00a7119722f55a",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "d3ba84949dd256a8",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Theorie/Compiler.md",
+                    "mode": "preview",
+                    "source": true
+                  },
+                  "icon": "lucide-file",
+                  "title": "Compiler"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 2053,
+        "y": 259,
+        "width": 788,
+        "height": 1000,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "982e9121254b5461",
+  "lastOpenFiles": [
+    "Methoden/LaTeX.md",
+    "State of the Art/DeepL.md",
+    "Theorie/Künstliche Intelligenz.md",
+    "Methoden",
+    "Theorie/Large Language Models.md",
+    "Theorie/Compiler.md",
+    "Welcome.md",
+    "State of the Art",
+    "Theorie"
+  ]
+}
