@@ -1,1 +1,2 @@
-> Test
+# Wozu dient ein Compiler
+> Wenn wir über einen Compiler sprechen, meinen wir hiermit üblicherweise ein Programm, welches eine Quellcode in einer für einen Softwareentwickler verständlichen Hochsprache (e.g., C, C++, Perl, etc.) in eine für einen Rechner verständliche Bitsequenz übersetzt. 
