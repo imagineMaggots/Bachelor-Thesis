@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1a192267d8664cdd",
+        "id": "3c61d8db76933016",
         "type": "tabs",
         "children": [
           {
-            "id": "0aa65a89bc695c2a",
+            "id": "5e0d61aa8a29394b",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Quellen/Mathematical Text Translation (June 2025)/MathML-aware article conversion from LaTeX. A comparison study. (Stramerjohanns et. al., ohne Datum).pdf"
+                "file": "State of the Art/June 2025/Machine Translation of Mathematical Text.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "lucide-file-text",
-              "title": "MathML-aware article conversion from LaTeX. A comparison study. (Stramerjohanns et. al., ohne Datum)"
+              "icon": "lucide-file",
+              "title": "Machine Translation of Mathematical Text"
             }
           }
         ]
@@ -163,13 +165,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0aa65a89bc695c2a",
+  "active": "5e0d61aa8a29394b",
   "lastOpenFiles": [
-    "Quellen/Untitled.md",
-    "Quellen/Mathematical Text Translation (June 2025)/MathML-aware article conversion from LaTeX. A comparison study. (Stramerjohanns et. al., ohne Datum).pdf",
-    "Quellen/Mathematical Text Translation (June 2025)/Rule Based Conversion of LaTeX Math Equations into Content MathML (Hussain; Bai and Khoja, 2020).pdf",
+    "State of the Art/June 2025/Rule Based Conversion of LATEX Math Equations into Content MathML (CMML).md",
+    "State of the Art/June 2025/MathML-aware article conversion from LATEX.  A comparison study..md",
+    "State of the Art/June 2025/Neural Machine Translation for Mathematical Formulae.md",
+    "State of the Art/June 2025/Machine Translation of Mathematical Text.md",
     "Quellen/Mathematical Text Translation (June 2025)/Neural Machine Translation for Mathematical Formulae (Petersen et. al., 2023).pdf",
+    "State of the Art/June 2025",
     "Quellen/Mathematical Text Translation (June 2025)/Machine Translation of Mathematical Text (Ohri and Schmah, 2020).pdf",
+    "Quellen/Mathematical Text Translation (June 2025)/MathML-aware article conversion from LaTeX. A comparison study. (Stramerjohanns et. al., ohne Datum).pdf",
+    "Quellen/Untitled.md",
+    "Quellen/Mathematical Text Translation (June 2025)/Rule Based Conversion of LaTeX Math Equations into Content MathML (Hussain; Bai and Khoja, 2020).pdf",
     "Quellen/Mathematical Text Translation (June 2025)",
     "Quellen/New folder",
     "Quellen/Literatur.bib",
@@ -180,7 +187,6 @@
     "Theorie/Large Language Models.md",
     "Methoden/LaTeX.md",
     "Theorie/Künstliche Intelligenz.md",
-    "Methoden",
     "Welcome.md"
   ]
 }
