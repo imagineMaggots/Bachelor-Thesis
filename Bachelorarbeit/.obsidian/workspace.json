@@ -11,14 +11,12 @@
             "id": "0aa65a89bc695c2a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "State of the Art/DeepL.md",
-                "mode": "source",
-                "source": true
+                "file": "Quellen/Mathematical Text Translation (June 2025)/MathML-aware article conversion from LaTeX. A comparison study. (Stramerjohanns et. al., ohne Datum).pdf"
               },
-              "icon": "lucide-file",
-              "title": "DeepL"
+              "icon": "lucide-file-text",
+              "title": "MathML-aware article conversion from LaTeX. A comparison study. (Stramerjohanns et. al., ohne Datum)"
             }
           }
         ]
@@ -165,55 +163,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "floating": {
-    "id": "ad6bb944e902c0b8",
-    "type": "floating",
-    "children": [
-      {
-        "id": "4a60e222e0ae64ae",
-        "type": "window",
-        "children": [
-          {
-            "id": "5e00a7119722f55a",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "d3ba84949dd256a8",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Theorie/Compiler.md",
-                    "mode": "preview",
-                    "source": true
-                  },
-                  "icon": "lucide-file",
-                  "title": "Compiler"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 2053,
-        "y": 259,
-        "width": 788,
-        "height": 1000,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "982e9121254b5461",
+  "active": "0aa65a89bc695c2a",
   "lastOpenFiles": [
-    "Methoden/LaTeX.md",
+    "Quellen/Untitled.md",
+    "Quellen/Mathematical Text Translation (June 2025)/MathML-aware article conversion from LaTeX. A comparison study. (Stramerjohanns et. al., ohne Datum).pdf",
+    "Quellen/Mathematical Text Translation (June 2025)/Rule Based Conversion of LaTeX Math Equations into Content MathML (Hussain; Bai and Khoja, 2020).pdf",
+    "Quellen/Mathematical Text Translation (June 2025)/Neural Machine Translation for Mathematical Formulae (Petersen et. al., 2023).pdf",
+    "Quellen/Mathematical Text Translation (June 2025)/Machine Translation of Mathematical Text (Ohri and Schmah, 2020).pdf",
+    "Quellen/Mathematical Text Translation (June 2025)",
+    "Quellen/New folder",
+    "Quellen/Literatur.bib",
+    "Quellen/New Text Document.txt",
     "State of the Art/DeepL.md",
+    "Quellen",
+    "Theorie/Compiler.md",
+    "Theorie/Large Language Models.md",
+    "Methoden/LaTeX.md",
     "Theorie/Künstliche Intelligenz.md",
     "Methoden",
-    "Theorie/Large Language Models.md",
-    "Theorie/Compiler.md",
-    "Welcome.md",
-    "State of the Art",
-    "Theorie"
+    "Welcome.md"
   ]
 }
