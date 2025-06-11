@@ -1,0 +1,43 @@
+For Developing .php-Scripts locally you can simply download PHP via Winget (assuming you've installed Winget).
+
+To list all available Programs that include "php" in their name you can use your Shell:
+	winget search php
+
+From here you can look for a Program named something like "PHP.PHP.8.4". This will be the exact version of PHP that's going to be installed.
+	winget install -y PHP.PHP.8.4
+
+This is the Command for Hosting PhP-Server locally (note: the $filepath should obv. be replaced with the path to your index.php):
+	php -S localhost:8000 -t $filepath
+
+The URL is going to be highlighted in the Terminal. 
+
+
+
+This is a little Hello World Example, that also includes a simple If-Else-Statement.
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PHP: Hypertext-Preprocessor</title>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <h2><?php echo "Hello World"?></h2>
+        <div>
+            <?php
+                $x = 1;
+                echo "Test $x <br>";
+
+                if ($x == 1)
+                {
+                    echo "$x";
+                }
+                else 
+                {
+                    $x-=2; 
+                    echo "$x";
+                }
+            ?>
+        </div>
+    </body>
+</html>
