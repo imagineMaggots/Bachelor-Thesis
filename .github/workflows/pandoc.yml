@@ -18,7 +18,7 @@ jobs:
 
 
           for mdfile in *; do
-            if [ -f -n "$*.md" ]; then
+            if [[ $mdfile = *.md ]]; then
               	echo "$mdfile"
             fi
           done
