@@ -1,6 +1,8 @@
 name: MdToPdfConversion
 permissions: write-all
-on: push
+on: 
+  push:
+    branches: main
 
 jobs:
   convert_via_pandoc:
@@ -11,6 +13,9 @@ jobs:
           sudo apt-get -y update
           sudo apt-get -y upgrade
           sudo apt-get -y install pandoc
+          sudo apt-get install texlive-latex-base
+          sudo apt-get install texlive-fonts-recommended
+          sudo apt-get install texlive-fonts-extra
           sudo pandoc -v
 
           gh repo clone imagineMaggots/Bachelor-Thesis
@@ -27,6 +32,6 @@ jobs:
 
           done
 
-          gh repo sync
+          gh repo sync -b new
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
