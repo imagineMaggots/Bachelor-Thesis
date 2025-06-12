@@ -21,13 +21,8 @@ jobs:
         id: files_list
         run: |
           mkdir output
-
-          # the readme
-          echo "files=$(printf '"%s" ' *.md)" > $GITHUB_OUTPUT
-          
-          # all .md files
-          FILES=find . -name "*.md"
-          for file in FILES; do
+          # add all .md files to the GitHub Output
+          for file in 'find . -name "*.md"'; do
             echo "File $file"
             echo "files=$(printf '"%s" ' *.md)" > $GITHUB_OUTPUT
 
