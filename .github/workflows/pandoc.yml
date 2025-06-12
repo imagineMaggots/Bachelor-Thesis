@@ -1,27 +1,21 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Convert Markdown to LaTeX via pandoc
+name: Advanced Usage
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: write
-  pages: write
-  id-token: write
+on: push
 
 jobs:
-  simple:
-    runs-on: ubuntu-latest
-    steps: 
+  convert_via_pandoc:
+    runs-on: ubuntu-22.04
+    steps:
       - uses: actions/checkout@v4
+      - name: create file list
+        id: files_list
+        run: |
+          mkdir output  # create output dir
+          # this will also include README.md
+          echo "files=$(printf '"%s" ' *.md)" > $GITHUB_OUTPUT
       - uses: docker://pandoc/latex:3.5
-      - run: sudo apt-get -y update
-      - run: sudo apt-get -y upgrade
-      - run: pandoc --version
-      - run: sudo apt-get -y install texlive
-      - run: for mdfile in *.md; do pandoc $mdfile -s -o ${mdfile/.md/}.tex; pandoc $mdfile -o ${mdfile/.md/}.pdf; done 
+        with:
+          args: --output=output/result.pdf ${{ steps.files_list.outputs.files }}
       - uses: actions/upload-artifact@v4
         with:
           name: output
