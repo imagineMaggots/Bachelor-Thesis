@@ -10,9 +10,9 @@ jobs:
       - name: create file list
         id: files_list
         run: |
-          apt-get -y update
-          apt-get -y upgrade
-          conda install -c conda-forge pandoc
+          sudo apt-get -y update
+          sudo apt-get -y upgrade
+          sudo conda install -c conda-forge pandoc
           pandoc -v
 
           mkdir output  # create output dir
