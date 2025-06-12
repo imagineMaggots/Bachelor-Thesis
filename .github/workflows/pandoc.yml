@@ -5,10 +5,6 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: write
@@ -17,8 +13,8 @@ permissions:
 
 jobs:
   simple:
-    image:
-      name: pandoc/core
-      entrypoint: ["/bin/sh", "-c"]
-    script:
-      - pandoc --help
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: docker://pandoc/core:3.5
+      with: 
+        args: "--help"
