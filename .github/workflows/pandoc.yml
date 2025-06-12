@@ -17,7 +17,7 @@ jobs:
     steps: 
       - uses: actions/checkout@v4
       
-      - uses: scripts/pandoc.sh@v1
+      - run: for mdfile in *.md; do pandoc $mdfile -s -o ${mdfile/.md/}.tex; pandoc $mdfile -o ${mdfile/.md/}.pdf; done
   
       - uses: docker://pandoc/latex:3.5
         with:
