@@ -12,10 +12,7 @@ jobs:
         run: |
           sudo apt-get -y update
           sudo apt-get -y upgrade
-          sudo conda install -c conda-forge pandoc
-          sudo pixi global install pandoc
-          sudo micromamba install pandoc
-
+          sudo apt-get -y pandoc
           sudo pandoc -v
 
 
