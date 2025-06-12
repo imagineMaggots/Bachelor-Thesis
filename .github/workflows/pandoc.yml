@@ -19,7 +19,6 @@ jobs:
       - uses: docker://pandoc/latex:3.5
       - run: sudo apt-get -y update
       - run: sudo apt-get -y upgrade
-      - run: sudo apt-get -y install haskell-platform
       - run: pandoc --version
       - run: sudo apt-get -y install texlive
       - run: for mdfile in *.md; do pandoc $mdfile -s -o ${mdfile/.md/}.tex; pandoc $mdfile -o ${mdfile/.md/}.pdf; done 
