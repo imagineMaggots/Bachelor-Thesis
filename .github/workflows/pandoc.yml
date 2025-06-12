@@ -1,4 +1,4 @@
-name: Advanced Usage
+name: MdToPdfConversion
 permissions: write-all
 on: push
 
@@ -14,6 +14,7 @@ jobs:
           sudo pandoc -v
 
           gh repo clone imagineMaggots/Bachelor-Thesis
+          cd Bachelor-Thesis
 
           for mdfile in *; do
             if [[ $mdfile = *.md ]]; then
@@ -23,6 +24,6 @@ jobs:
             fi
           done
 
-          gh sync
+          gh repo sync
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
