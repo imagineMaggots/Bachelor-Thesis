@@ -13,14 +13,15 @@ jobs:
           mkdir output  # create output dir
           # this will also include README.md
           
-          find -name "*.md"
+          FILES=find -name "*.md"
+          echo "$FILES"
 
           for mdfile in test; do
             	echo "$mdfile$"
           done
       # - uses: docker://pandoc/latex:3.5
         #with:
-          #args: --output=output/result.pdf ${{ steps.files_list.outputs.files }}
+              #args: --output=output/result.pdf ${{ steps.files_list.outputs.files }}
       #- uses: actions/upload-artifact@v4
         #with:
           #name: output
