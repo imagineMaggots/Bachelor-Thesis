@@ -16,13 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
-      
-      - run: for mdfile in *.md; do pandoc $mdfile -s -o ${mdfile/.md/}.tex; pandoc $mdfile -o ${mdfile/.md/}.pdf; done
-  
       - uses: docker://pandoc/latex:3.5
-        with:
-          args: --output=output/result.pdf ${{ steps.files_list.outputs.files }}
-          
+      - run: for mdfile in *.md; do pandoc $mdfile -s -o ${mdfile/.md/}.tex; pandoc $mdfile -o ${mdfile/.md/}.pdf; done 
       - uses: actions/upload-artifact@v4
         with:
           name: output
