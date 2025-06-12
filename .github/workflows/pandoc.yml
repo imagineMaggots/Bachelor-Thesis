@@ -17,8 +17,8 @@ jobs:
     steps: 
       - uses: actions/checkout@v4
       
-      - run: scripts/pandoc.sh
-      
+      - uses: scripts/pandoc.sh@v1
+  
       - uses: docker://pandoc/latex:3.5
         with:
           args: --output=output/result.pdf ${{ steps.files_list.outputs.files }}
