@@ -13,7 +13,9 @@ jobs:
           mkdir output  # create output dir
           # this will also include README.md
           
-          for mdfile in 'find -f -name "*.md"'; do
+          find -f -name "*.md"
+
+          for mdfile in test; do
             	echo "$mdfile$"
           done
       # - uses: docker://pandoc/latex:3.5
