@@ -1,22 +1,19 @@
 name: Advanced Usage
-
+permissions: write-all
 on: push
 
 jobs:
   convert_via_pandoc:
     runs-on: ubuntu-22.04
     steps:
-      # - uses: actions/checkout@v4
-      - name: create file list
-        id: files_list
+      - name: Install Pandoc and convert all Markdown Files
         run: |
           sudo apt-get -y update
           sudo apt-get -y upgrade
           sudo apt-get -y install pandoc
           sudo pandoc -v
 
-
-          # ToDo: Clone Git Repo
+          gh repo clone imagineMaggots/Bachelor-Thesis
 
           for mdfile in *; do
             if [[ $mdfile = *.md ]]; then
@@ -25,11 +22,8 @@ jobs:
                 # ToDo: Pandoc Conversion to .tex and .pdf
             fi
           done
-          # Todo: Push to Git Repo
-      # - uses: docker://pandoc/latex:3.5
-        #with:
-              #args: --output=output/result.pdf ${{ steps.files_list.outputs.files }}
-      #- uses: actions/upload-artifact@v4
-        #with:
-          #name: output
-          #path: output
+
+          gh commit
+          gh push
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
