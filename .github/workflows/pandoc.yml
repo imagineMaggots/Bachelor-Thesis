@@ -14,7 +14,7 @@ jobs:
           # this will also include README.md
           
           for dir in .; do 
-            echo "$FILE"; 
+            echo "$dir"; 
           done
       # - uses: docker://pandoc/latex:3.5
         #with:
