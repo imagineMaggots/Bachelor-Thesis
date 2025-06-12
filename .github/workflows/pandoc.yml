@@ -17,13 +17,12 @@ jobs:
     steps: 
       - uses: actions/checkout@v4
       - uses: docker://pandoc/latex:3.5
-      - run: | 
-          sudo apt-get -y update
-          sudo apt-get -y upgrade
-          sudo apt-get -y install haskell-platform
-          pandoc --version
-          sudo apt-get -y install texlive
-          for mdfile in *.md; do pandoc $mdfile -s -o ${mdfile/.md/}.tex; pandoc $mdfile -o ${mdfile/.md/}.pdf; done 
+      - run: sudo apt-get -y update
+      - run: sudo apt-get -y upgrade
+      - run: sudo apt-get -y install haskell-platform
+      - run: pandoc --version
+      - run: sudo apt-get -y install texlive
+      - run: for mdfile in *.md; do pandoc $mdfile -s -o ${mdfile/.md/}.tex; pandoc $mdfile -o ${mdfile/.md/}.pdf; done 
       - uses: actions/upload-artifact@v4
         with:
           name: output
