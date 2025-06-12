@@ -20,6 +20,7 @@ jobs:
           for mdfile in *; do
             if [ -f -n "$*.md" ]; then
               	echo "$mdfile"
+            fi
           done
       # - uses: docker://pandoc/latex:3.5
         #with:
