@@ -21,7 +21,10 @@ jobs:
               	echo "$mdfile"
 
                 # ToDo: Pandoc Conversion to .tex and .pdf
+                pandoc "$mdfile" -o ${mdfile/.md/}.pdf
+                pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
             fi
+
           done
 
           gh repo sync
