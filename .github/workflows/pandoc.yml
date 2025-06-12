@@ -23,7 +23,6 @@ jobs:
             fi
           done
 
-          gh commit
-          gh push
+          gh sync
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
