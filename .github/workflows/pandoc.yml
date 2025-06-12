@@ -13,8 +13,8 @@ jobs:
           mkdir output  # create output dir
           # this will also include README.md
           
-          for dir in .; do 
-            echo "$dir"; 
+          for mdfile in *.md; do
+          	echo "$mdfile$
           done
       # - uses: docker://pandoc/latex:3.5
         #with:
