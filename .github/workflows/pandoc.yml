@@ -13,7 +13,7 @@ jobs:
           sudo apt-get -y update
           sudo apt-get -y upgrade
           sudo conda install -c conda-forge pandoc
-          pandoc -v
+          sudo pandoc -v
 
           mkdir output  # create output dir
           # this will also include README.md
