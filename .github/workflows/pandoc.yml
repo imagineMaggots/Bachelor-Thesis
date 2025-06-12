@@ -20,11 +20,16 @@ jobs:
       - name: create file list
         id: files_list
         run: |
-          echo "Lorem ipsum" > lorem_1.md  # create two example files
-          echo "dolor sit amet" > lorem_2.md
-          mkdir output  # create output dir
-          # this will also include README.md
+          mkdir output
+
+          # the readme
           echo "files=$(printf '"%s" ' *.md)" > $GITHUB_OUTPUT
+          
+          # all .md files
+          FILES=find . -name "*.md"
+          for file in FILES; do
+            echo "File $file"
+            echo "files=$(printf '"%s" ' *.md)" > $GITHUB_OUTPUT
 
       - uses: docker://pandoc/latex:3.5
         with:
