@@ -12,12 +12,9 @@ jobs:
         run: |
           mkdir output  # create output dir
           # this will also include README.md
-          
-          FILES=find -name "*.md"
-          echo "$FILES"
 
-          for mdfile in test; do
-            	echo "$mdfile$"
+          for mdfile in *; do
+            	echo "$mdfile"
           done
       # - uses: docker://pandoc/latex:3.5
         #with:
