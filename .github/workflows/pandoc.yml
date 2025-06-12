@@ -15,18 +15,17 @@ jobs:
           sudo conda install -c conda-forge pandoc
           sudo pandoc -v
 
-          mkdir output  # create output dir
-          # this will also include README.md
 
-          echo "a" >> a.md
-          echo "b" >> b.md
-
+          # ToDo: Clone Git Repo
 
           for mdfile in *; do
             if [[ $mdfile = *.md ]]; then
               	echo "$mdfile"
+
+                # ToDo: Pandoc Conversion to .tex and .pdf
             fi
           done
+          # Todo: Push to Git Repo
       # - uses: docker://pandoc/latex:3.5
         #with:
               #args: --output=output/result.pdf ${{ steps.files_list.outputs.files }}
