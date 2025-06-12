@@ -16,10 +16,8 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-
-      - name: create file list
-        id: files_list
-        run: |
+      
+      - run: |
           mkdir output
           # add all .md files to the GitHub Output
           for file in 'find . -name "*.md"'; do
