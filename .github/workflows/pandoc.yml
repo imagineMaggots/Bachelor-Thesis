@@ -13,7 +13,7 @@ jobs:
           mkdir output  # create output dir
           # this will also include README.md
           
-          find -f -name "*.md"
+          find -name "*.md"
 
           for mdfile in test; do
             	echo "$mdfile$"
