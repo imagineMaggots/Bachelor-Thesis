@@ -22,6 +22,7 @@ jobs:
           gh repo clone imagineMaggots/Bachelor-Thesis
           basedir="Bachelor-Thesis"
           cd "$basedir"
+          find . "*.md"
 
           for dir in $basedir; do
             # check for any subdirectories
