@@ -28,10 +28,12 @@ jobs:
             for dir in *; do
               # check for any subdirectories
               if [[ -d $dir ]]; then
-                echo "entering directory $dir"
-                cd $dir
+                echo 'entering directory "$dir"...'
+                cd "$dir"
+
                 recurse
-                echo "leaving directory $dir"
+
+                echo 'leaving directory "$dir"...'
                 cd ..
               else
                 # check for any markdown files
@@ -41,9 +43,9 @@ jobs:
 
                   # Pandoc Conversion to .tex and .pdf
                     pandoc "$mdfile" -o ${mdfile/.md/}.pdf
-                    echo "created ${mdfile/.md/}.pdf"
+                    echo "successfully created ${mdfile/.md/}.pdf"
                     pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
-                    echo "created ${mdfile/.md/}.tex"
+                    echo "successfully created ${mdfile/.md/}.tex"
 
 
                   # echo "files=${printf '%s' *.md}" >> $GITHUB_OUTPUT
