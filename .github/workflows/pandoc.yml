@@ -27,23 +27,30 @@ jobs:
           for dir in $basedir; do
             # enter any existing subdirs
             if [[ -d $dir ]]; then
+            {
               cd $dir;
             
               echo "Entered $dir"
             
               for mdfile in $dir; do
                 if [[ -f $dir ]]; then
-                  pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
+                {
+                  pandoc "$mdfile" -s -o ${mdfile/.md/}.tex; 
                   echo "Successfully converted $mdfile!"
+                }
                 fi
               done
               cd ..
 
               for mdfile in $dir; do
                 if [[ -f $dir ]]; then
-                  pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
+                {
+                  pandoc "$mdfile" -s -o ${mdfile/.md/}.tex; 
                   echo "Successfully converted $mdfile!"
+                }
                 fi
+            }
+              
             fi
           done
           
