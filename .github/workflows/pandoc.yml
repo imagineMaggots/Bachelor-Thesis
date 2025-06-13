@@ -21,17 +21,17 @@ jobs:
 
           gh repo clone imagineMaggots/Bachelor-Thesis
           basedir="Bachelor-Thesis"
-          cd "$basedir"
+          cd "./$basedir"
           echo "Entered $basedir"
 
           # iterate over all directories and subdirectories
-          for dir in "$basedir"; do
+          for dir in "./$basedir"; do
             # enter any existing subdirs
             if [[ -d $dir ]]; then
-                cd "$dir"
+                cd "./$dir"
                 echo "Entered $dir"
   
-                for mdfile in "$dir"; do
+                for mdfile in "./$dir"; do
                   if [[ -f $dir ]]; then
                     pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
                     echo "Successfully converted $mdfile!"
@@ -40,7 +40,7 @@ jobs:
 
                 cd ..
 
-                for mdfile in "$dir"; do
+                for mdfile in "./$dir"; do
                   if [[ -f $dir ]]; then
                     pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
                     echo "Successfully converted $mdfile!"
