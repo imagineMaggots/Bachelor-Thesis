@@ -49,10 +49,9 @@ jobs:
                   echo "Successfully converted $mdfile!"
                 }
                 fi
-            }
-              
-            fi
-          done
+              }
+              fi
+            done
           
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
