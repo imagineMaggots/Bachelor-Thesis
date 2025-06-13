@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - name: Install Pandoc and convert all Markdown Files
+      - name: Install Pandoc and convert all Markdown Files into tex
         run: |
           sudo apt-get -y update
           sudo apt-get -y upgrade
@@ -25,13 +25,13 @@ jobs:
           echo "Entered $basedir"
 
           # iterate over all directories and subdirectories
-          for dir in $basedir; do
+          for dir in "$basedir"; do
             # enter any existing subdirs
             if [[ -d $dir ]]; then
-                cd $dir
+                cd "$dir"
                 echo "Entered $dir"
   
-                for mdfile in $dir; do
+                for mdfile in "$dir"; do
                   if [[ -f $dir ]]; then
                     pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
                     echo "Successfully converted $mdfile!"
@@ -40,7 +40,7 @@ jobs:
 
                 cd ..
 
-                for mdfile in $dir; do
+                for mdfile in "$dir"; do
                   if [[ -f $dir ]]; then
                     pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
                     echo "Successfully converted $mdfile!"
