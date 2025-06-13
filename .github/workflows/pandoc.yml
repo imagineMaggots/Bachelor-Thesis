@@ -59,8 +59,7 @@ jobs:
             fi
           }
 
-          printf '%s\n' "$PWD"
-          echo "$PWD"
+          echo "${PWD/*/'%s'/}"
 
           # echo "$dir"
 
