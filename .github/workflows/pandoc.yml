@@ -33,7 +33,9 @@ jobs:
             fi
             for mdfile in "$dir/*.md"; do
             # Todo: if file exists, obv. otherwise create first
-                if [ !find "$mdfile" ]; do echo "placeholder" >> $mdfile
+                if [ !find "$mdfile" ]; do 
+                  echo "placeholder" >> $mdfile
+                fi
                 pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
                 echo "Successfully converted $mdfile!"
             done
