@@ -22,7 +22,7 @@ jobs:
           gh repo clone imagineMaggots/Bachelor-Thesis
           basedir="Bachelor-Thesis"
           cd "$basedir"
-          files={find . -name '*.md'}
+          files={find . -type f}
           echo $files
 
           # pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
