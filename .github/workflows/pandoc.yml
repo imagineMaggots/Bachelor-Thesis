@@ -13,11 +13,11 @@ jobs:
         run: |
           # sudo apt-get -y update
           # sudo apt-get -y upgrade
-          sudo apt-get -y install pandoc
-          sudo apt-get install texlive-latex-base
-          sudo apt-get install texlive-fonts-recommended
-          sudo apt-get install texlive-fonts-extra
-          sudo pandoc -v
+          # sudo apt-get -y install pandoc
+          # sudo apt-get install texlive-latex-base
+          # sudo apt-get install texlive-fonts-recommended
+          # sudo apt-get install texlive-fonts-extra
+          # sudo pandoc -v
 
           gh repo clone imagineMaggots/Bachelor-Thesis
           cd Bachelor-Thesis
@@ -42,10 +42,10 @@ jobs:
                     echo "Compiling $mdfile"
 
                   # Pandoc Conversion to .tex and .pdf
-                    pandoc "$mdfile" -o ${mdfile/.md/}.pdf
-                    echo "successfully created ${mdfile/.md/}.pdf"
-                    pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
-                    echo "successfully created ${mdfile/.md/}.tex"
+                  #  pandoc "$mdfile" -o ${mdfile/.md/}.pdf
+                  #  echo "successfully created ${mdfile/.md/}.pdf"
+                  #  pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
+                  #  echo "successfully created ${mdfile/.md/}.tex"
 
 
                   # echo "files=${printf '%s' *.md}" >> $GITHUB_OUTPUT
@@ -56,22 +56,6 @@ jobs:
           }
           
           recurse
-
-          # root dir, should be able to remove this
-          echo "we're back at the root"
-          for mdfile in *; do
-            if [[ $mdfile = *.md ]]; then
-              echo "Compiling $mdfile"
-
-              # Pandoc Conversion to .tex and .pdf
-              pandoc "$mdfile" -o ${mdfile/.md/}.pdf
-              echo "created ${mdfile/.md/}.pdf"
-              pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
-              echo "created ${mdfile/.md/}.tex"
-              
-              # echo "files=${printf '%s' *.md}" >> $GITHUB_OUTPUT
-            fi
-          done
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
