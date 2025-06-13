@@ -22,9 +22,9 @@ jobs:
           gh repo clone imagineMaggots/Bachelor-Thesis
           basedir="Bachelor-Thesis"
           cd "$basedir"
-          find . -type f
+          files=find . -type f
 
-          for dir in $basedir; do
+          for dir in $files; do
             # check for any subdirectories
             if [[ -d $dir ]]; then
               cd "$dir"
