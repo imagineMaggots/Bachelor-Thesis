@@ -11,40 +11,38 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Pandoc and convert all Markdown Files
         run: |
-          #sudo apt-get -y update
-          #sudo apt-get -y upgrade
-          #sudo apt-get -y install pandoc
-          #sudo apt-get install texlive-latex-base
-          #sudo apt-get install texlive-fonts-recommended
-          #sudo apt-get install texlive-fonts-extra
-          #sudo pandoc -v
+#sudo apt-get -y update
+#sudo apt-get -y upgrade
+#sudo apt-get -y install pandoc
+#sudo apt-get install texlive-latex-base
+#sudo apt-get install texlive-fonts-recommended
+#sudo apt-get install texlive-fonts-extra
+#sudo pandoc -v
 
-          gh repo clone imagineMaggots/Bachelor-Thesis
-          basedir="Bachelor-Thesis"
-          cd "$basedir"
+gh repo clone imagineMaggots/Bachelor-Thesis
+basedir="Bachelor-Thesis"
+cd "$basedir"
 
-          # iterate over all directories and subdirectories
-          for dir in $basedir; do
-            # enter any existing subdirs
-            if [[ -d $dir ]]; then
-              cd $dir
-              echo "Entered $dir"
-            
-              for mdfile in $dir; do
-                if [[ -f $dir ]]; then
-                  #pandoc "$mdfile" -s -o ${mdfile/.md/}.tex; 
-                  echo "Successfully converted $mdfile!"
-                fi
-              done
-              cd ..
-
-              for mdfile in $dir; do
-                if [[ -f $dir ]]; then
-                  #pandoc "$mdfile" -s -o ${mdfile/.md/}.tex; 
-                  echo "Successfully converted $mdfile!"
-                fi
-              fi
-            done
+# iterate over all directories and subdirectories
+for dir in $basedir; do
+  # enter any existing subdirs
+  if [[ -d $dir ]]; then
+    cd $dir
+    echo "Entered $dir"
+    for mdfile in $dir; do
+      if [[ -f $dir ]]; then
+        #pandoc "$mdfile" -s -o ${mdfile/.md/}.tex; 
+        echo "Successfully converted $mdfile!"
+      fi
+    done
+    cd ..
+    for mdfile in $dir; do
+      if [[ -f $dir ]]; then
+        #pandoc "$mdfile" -s -o ${mdfile/.md/}.tex; 
+        echo "Successfully converted $mdfile!"
+      fi
+  fi
+done
           
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
