@@ -26,7 +26,7 @@ jobs:
           # iterate over all directories
           for dir in *; do
             # check if there are subdirectories
-            if [ -d dir ]; then
+            if [ -d $dir ]; then
               echo "checking directory $dir for Markdown-files"
               cd $dir
             fi
@@ -45,21 +45,22 @@ jobs:
                 fi
               cd ..
             done
-            # root dir
-            echo "we're back at the root"
-            for mdfile in *; do
-              if [[ $mdfile = *.md ]]; then
-                echo "Compiling $mdfile"
+          done
 
-                # Pandoc Conversion to .tex and .pdf
-                pandoc "$mdfile" -o ${mdfile/.md/}.pdf
-                echo "created ${mdfile/.md/}.pdf"
-                pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
-                echo "created ${mdfile/.md/}.tex"
+          # root dir
+          echo "we're back at the root"
+          for mdfile in *; do
+            if [[ $mdfile = *.md ]]; then
+              echo "Compiling $mdfile"
+
+              # Pandoc Conversion to .tex and .pdf
+              pandoc "$mdfile" -o ${mdfile/.md/}.pdf
+              echo "created ${mdfile/.md/}.pdf"
+              pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
+              echo "created ${mdfile/.md/}.tex"
               
-                # echo "files=${printf '%s' *.md}" >> $GITHUB_OUTPUT
-              fi
-            done
+              # echo "files=${printf '%s' *.md}" >> $GITHUB_OUTPUT
+            fi
           done
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
