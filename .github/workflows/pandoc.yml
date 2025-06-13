@@ -59,9 +59,9 @@ jobs:
             fi
           }
 
-          #dir=printf '%s\n' "${PWD##*/}"
+          dir=printf '%s\n' "${PWD##*/}"
           
-          #echo "$dir"
+          echo "$dir"
 
           #conversion "$dir"
         env:
