@@ -59,8 +59,8 @@ jobs:
             fi
           }
 
-          printf '%s\n' "${PWD##*/}"
-          echo "dir=${printf '%s' "${PWD##*/}"}"
+          printf '%s\n' "$PWD"
+          echo "$PWD"
 
           # echo "$dir"
 
