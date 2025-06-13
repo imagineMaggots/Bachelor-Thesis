@@ -40,7 +40,7 @@ jobs:
             else
               for mdfile in ${dir/*.md}; do          # regex: only considers markdown-files
               
-              # if .md-file already exists, convert it to .tex, otherwise create first a placeholder
+              # .md-file already exists? convert it to .tex, otherwise create first a placeholder
                 if [[ -e $mdfile ]]; then
                   pandoc "$mdfile" -s -o ${mdfile/.md/}.tex      # regex: cuts off .md-file-ending
                   # pandoc "$mdfile" -s -o ${mdfile/.md/].pdf    # regex: cuts off .md-file-ending
@@ -48,6 +48,8 @@ jobs:
                 else
                   echo "### placeholder" >> $mdfile
                 fi
+                
+              done
             fi
           }
           
