@@ -24,8 +24,8 @@ jobs:
           cd "$basedir"
 
           # find all files
-          files=find "." -type f
-          echo $files
+          find "." -type f
+          # echo $files
 
           # pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
           
