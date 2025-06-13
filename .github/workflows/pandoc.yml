@@ -59,11 +59,11 @@ jobs:
             fi
           }
 
-          dir=printf '%s\n' "${PWD##*/}"
+          #dir=printf '%s\n' "${PWD##*/}"
           
-          echo "$dir"
+          #echo "$dir"
 
-          conversion "$dir"
+          #conversion "$dir"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
