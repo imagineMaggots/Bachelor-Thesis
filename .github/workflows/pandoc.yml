@@ -24,26 +24,33 @@ jobs:
           cd "./$basedir"
           echo "Entered $basedir"
 
-          # iterate over all directories and subdirectories
-          for dir in ${basedir/*}; do
-            # enter any existing subdirs
+          convert_markdown_to_tex_and_pdf_recursively ()
+          {
+            local type=$1
+            
+            # enter any given subdirectories
             if [[ -d $dir ]]; then
+                echo "Trying to enter $dir"
                 cd "./$dir"
                 echo "Entered $dir"
+                convert_markdown_to_tex_and_pdf_recursively "$dir" # note: in quotation marks for possible spaces (which a shell interprets as seperators/delimiters btw. function and options (or parameters or...)
+            
+            # now we know that there are no more subdirectories
+            else
+                for mdfile in ${dir/*.md}; do          # regex: only considers markdown-files
+                  
+                  # if .md-file already exists, convert it to .tex, otherwise create first a placeholder
+                  if [[ -e $mdfile ]]; then
+                    pandoc "$mdfile" -s -o ${mdfile/.md/}.tex      # regex: cuts off .md-file-ending
+                    # pandoc "$mdfile" -s -o ${mdfile/.md/].pdf    # regex: cuts off .md-file-ending
+                    echo "Successfully converted $mdfile!"
+                  else
+                    echo "### placeholder" >> $mdfile
+                  fi
             fi
-            for mdfile in ${dir/*.md}; do
-            # Todo: if file exists, obv. otherwise create first
-                if [[ -e $mdfile ]]; then
-                  pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
-                  echo "Successfully converted $mdfile!"
-                else
-                  echo "### placeholder" >> $mdfile
-                fi
-            done
-
-            cd ..
-            echo "Left $dir"
-          done
+          }
+          
+          convert_markdown_to_tex_and_pdf_recursively $basedir
           
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
