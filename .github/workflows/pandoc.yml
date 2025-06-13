@@ -23,9 +23,10 @@ jobs:
           basedir="Bachelor-Thesis"
           cd "$basedir"
 
-          # find all files
-          find "." -type f
-          # echo $files
+          # find all files and puts them in a temporary text-file
+          echo "${find "." -type f}" 
+          
+
 
           # pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
           
