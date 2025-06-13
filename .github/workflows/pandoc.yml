@@ -43,7 +43,7 @@ jobs:
                   #pandoc "$mdfile" -s -o ${mdfile/.md/}.tex; 
                   echo "Successfully converted $mdfile!"
                 fi
-            fi
+              fi
             done
           
         env:
