@@ -58,9 +58,11 @@ jobs:
               done
             fi
           }
-          printf '%s\n' "${PWD##*/}"
+
+          dir=printf '%s\n' "${PWD##*/}"
           
-          dir=${printf '%s\n' "${PWD##*/}"}
+          echo "$dir"
+
           conversion "$dir"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
