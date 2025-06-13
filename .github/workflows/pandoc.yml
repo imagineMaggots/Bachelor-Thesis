@@ -28,12 +28,12 @@ jobs:
             for dir in *; do
               # check for any subdirectories
               if [[ -d $dir ]]; then
-                echo 'entering directory "$dir"...'
                 cd "$dir"
+                echo "success in entering directory $dir..."
 
                 recurse
 
-                echo 'leaving directory "$dir"...'
+                echo "leaving $dir..."
                 cd ..
               else
                 # check for any markdown files
