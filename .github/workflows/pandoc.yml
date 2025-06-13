@@ -34,7 +34,7 @@ jobs:
               cd "$dir"
               echo "success in entering directory $dir..."
 
-              recurse
+              conversion "$dir"
 
               echo "leaving $dir..."
               cd ..
