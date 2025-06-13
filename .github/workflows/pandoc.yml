@@ -24,7 +24,7 @@ jobs:
           cd "$basedir"
 
           # find all files and puts them in a temporary text-file
-          echo "${find "." -type f}" 
+          echo "{find "." -type f}" 
           
 
 
