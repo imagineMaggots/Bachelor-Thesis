@@ -22,7 +22,8 @@ jobs:
           gh repo clone imagineMaggots/Bachelor-Thesis
           cd Bachelor-Thesis
 
-          function recurse {
+          function recurse ()
+          {
             # iterate over all directories
             for dir in *; do
               # check for any subdirectories
@@ -30,33 +31,31 @@ jobs:
                 echo "entering directory $dir"
                 cd $dir
                 recurse
+                echo "leaving directory $dir"
+                cd ..
+              else
+                # check for any markdown files
+                for mdfile in *; do
+                  if [[ $mdfile = *.md ]]; then
+                    echo "Compiling $mdfile"
+
+                  # Pandoc Conversion to .tex and .pdf
+                    pandoc "$mdfile" -o ${mdfile/.md/}.pdf
+                    echo "created ${mdfile/.md/}.pdf"
+                    pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
+                    echo "created ${mdfile/.md/}.tex"
+
+
+                  # echo "files=${printf '%s' *.md}" >> $GITHUB_OUTPUT
+                  fi
+                done
               fi
-
-              # check for any markdown files
-              for mdfile in *; do
-                if [[ $mdfile = *.md ]]; then
-                  echo "Compiling $mdfile"
-
-                # Pandoc Conversion to .tex and .pdf
-                  pandoc "$mdfile" -o ${mdfile/.md/}.pdf
-                  echo "created ${mdfile/.md/}.pdf"
-                  pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
-                  echo "created ${mdfile/.md/}.tex"
-
-
-                # echo "files=${printf '%s' *.md}" >> $GITHUB_OUTPUT
-                fi
-              done
-
-              # going back
-              echo "leaving $dir"
-              cd ..
             done
           }
           
           recurse
 
-          # root dir
+          # root dir, should be able to remove this
           echo "we're back at the root"
           for mdfile in *; do
             if [[ $mdfile = *.md ]]; then
