@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install Pandoc and convert all Markdown Files
+        id: pandoc
         run: |
           sudo apt-get -y update
           sudo apt-get -y upgrade
@@ -22,7 +23,7 @@ jobs:
           gh repo clone imagineMaggots/Bachelor-Thesis
           basedir="Bachelor-Thesis"
           cd "$basedir"
-          find . -name '*.md' -exec pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
+          find . -name '*.md' -exec pandoc "$mdfile" -s -o ${mdfile/.md/}.tex; 
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
