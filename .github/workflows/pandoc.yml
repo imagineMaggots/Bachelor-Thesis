@@ -10,20 +10,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install Pandoc and convert all Markdown Files
-        id: pandoc
         run: |
-          # sudo apt-get -y update
-          # sudo apt-get -y upgrade
-          sudo apt-get -y install pandoc
-          sudo apt-get install texlive-latex-base
-          sudo apt-get install texlive-fonts-recommended
-          sudo apt-get install texlive-fonts-extra
-          sudo pandoc -v
+          #sudo apt-get -y update
+          #sudo apt-get -y upgrade
+          #sudo apt-get -y install pandoc
+          #sudo apt-get install texlive-latex-base
+          #sudo apt-get install texlive-fonts-recommended
+          #sudo apt-get install texlive-fonts-extra
+          #sudo pandoc -v
 
           gh repo clone imagineMaggots/Bachelor-Thesis
           basedir="Bachelor-Thesis"
           cd "$basedir"
-          find . -name '*.md' -exec {pandoc "$mdfile" -s -o ${mdfile/.md/}.tex} \; 
+          files={find . -name '*.md'}
+          echo $files
+
+          # pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
+          
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
