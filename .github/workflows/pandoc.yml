@@ -12,8 +12,8 @@ jobs:
       - name: Install Pandoc and convert all Markdown Files
         id: pandoc
         run: |
-          sudo apt-get -y update
-          sudo apt-get -y upgrade
+          # sudo apt-get -y update
+          # sudo apt-get -y upgrade
           sudo apt-get -y install pandoc
           sudo apt-get install texlive-latex-base
           sudo apt-get install texlive-fonts-recommended
