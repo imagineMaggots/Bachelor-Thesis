@@ -30,7 +30,7 @@ jobs:
             echo "in $rootDir"
 
             for dir in ${rootDir/.*/}; do                             # regex: should only consider directories
-              
+              echo $dir
               # enter any given subdirectories
               if [[ -d $dir ]]; then                                    # if statement just to make sure
                 echo "Trying to enter $dir"
