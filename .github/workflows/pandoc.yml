@@ -22,6 +22,7 @@ jobs:
           gh repo clone imagineMaggots/Bachelor-Thesis
           basedir="Bachelor-Thesis"
           cd "$basedir"
+          echo "Entered $basedir"
 
           # iterate over all directories and subdirectories
           for dir in $basedir; do
