@@ -27,7 +27,8 @@ jobs:
           convert_markdown_to_tex_and_pdf_recursively ()
           {
             local dir=$1
-            
+            echo "in $dir"
+
             # enter any given subdirectories
             if [[ -d $dir ]]; then
               echo "Trying to enter $dir"
