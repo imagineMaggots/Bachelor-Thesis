@@ -22,16 +22,17 @@ jobs:
           gh repo clone imagineMaggots/Bachelor-Thesis
           cd Bachelor-Thesis
 
-          function iterateOverSubDirs {
+          function recurse {
             # iterate over all directories
             for dir in *; do
-              # check if there are subdirectories
+              # check for any subdirectories
               if [[ -d $dir ]]; then
                 echo "entering directory $dir"
                 cd $dir
-                iterateOverSubDirs
+                recurse
               fi
 
+              # check for any markdown files
               for mdfile in *; do
                 if [[ $mdfile = *.md ]]; then
                   echo "Compiling $mdfile"
@@ -50,8 +51,6 @@ jobs:
               # going back
               echo "leaving $dir"
               cd ..
-
-              fi
             done
           }
           
