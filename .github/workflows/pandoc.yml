@@ -11,50 +11,18 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Pandoc and convert all Markdown Files
         run: |
-          # sudo apt-get -y update
-          # sudo apt-get -y upgrade
-          # sudo apt-get -y install pandoc
-          # sudo apt-get install texlive-latex-base
-          # sudo apt-get install texlive-fonts-recommended
-          # sudo apt-get install texlive-fonts-extra
-          # sudo pandoc -v
+          sudo apt-get -y update
+          sudo apt-get -y upgrade
+          sudo apt-get -y install pandoc
+          sudo apt-get install texlive-latex-base
+          sudo apt-get install texlive-fonts-recommended
+          sudo apt-get install texlive-fonts-extra
+          sudo pandoc -v
 
           gh repo clone imagineMaggots/Bachelor-Thesis
           basedir="Bachelor-Thesis"
           cd "$basedir"
-          find . -name '*.md'
-
-          for dir in $files; do
-            # check for any subdirectories
-            if [[ -d $dir ]]; then
-              cd "$dir"
-              echo "success in entering directory $dir..."
-
-              subdir=${printf '%s\n' "${PWD##*/}"}
-
-              conversion "$subdir"
-
-              echo "leaving $dir..."
-              cd ..
-            else
-              # check for any markdown files
-              for mdfile in $dir; do
-                if [[ $mdfile = *.md ]]; then
-                  echo "Compiling $mdfile"
-
-                  # Pandoc Conversion to .tex and .pdf
-                  #  pandoc "$mdfile" -o ${mdfile/.md/}.pdf
-                  echo "successfully created ${mdfile/.md/}.pdf"
-                  #  pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
-                  echo "successfully created ${mdfile/.md/}.tex"
-
-
-                  # echo "files=${printf '%s' *.md}" >> $GITHUB_OUTPUT
-                fi
-              done
-            fi
-          done
-
+          find . -name '*.md' -exec pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
