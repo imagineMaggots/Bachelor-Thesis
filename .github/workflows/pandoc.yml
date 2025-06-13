@@ -54,7 +54,7 @@ jobs:
             done
           }
           
-          
+          recurse
 
           # root dir
           echo "we're back at the root"
