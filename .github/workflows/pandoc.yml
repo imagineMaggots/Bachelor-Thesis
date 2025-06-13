@@ -20,7 +20,8 @@ jobs:
           # sudo pandoc -v
 
           gh repo clone imagineMaggots/Bachelor-Thesis
-          cd Bachelor-Thesis
+          basedir="Bachelor-Thesis"
+          cd "$basedir"
 
           # converts all .md files to .pdf and .tex
           # arguments:
@@ -59,7 +60,7 @@ jobs:
             fi
           }
 
-          conversion "Bachelor-Thesis"
+          for dir in $basedir; do conversion $dir; done
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
