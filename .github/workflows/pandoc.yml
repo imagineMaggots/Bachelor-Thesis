@@ -26,7 +26,7 @@ jobs:
 
           convert_markdown_to_tex_and_pdf_recursively ()
           {
-            local type=$1
+            local dir=$1
             
             # enter any given subdirectories
             if [[ -d $dir ]]; then
