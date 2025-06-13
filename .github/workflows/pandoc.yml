@@ -29,7 +29,7 @@ jobs:
             local rootDir=$1
             echo "in $rootDir"
 
-            for dir in ${rootDir/.*/}; do                             # regex: should only consider directories
+            for dir in "./"; do                             # regex: should only consider directories
               echo $dir
               # enter any given subdirectories
               if [[ -d $dir ]]; then                                    # if statement just to make sure
