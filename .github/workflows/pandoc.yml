@@ -29,9 +29,10 @@ jobs:
             local rootDir=$1
             echo "in $rootDir"
 
-            for dir in $rootDir; do
+            for dir in "${rootDir/*./}"; do                             # regex: should only consider directories
+              
               # enter any given subdirectories
-              if [[ -d $dir ]]; then
+              if [[ -d $dir ]]; then                                    # if statement just to make sure
                 echo "Trying to enter $dir"
                 cd "./$dir"
                 echo "Entered $dir"
