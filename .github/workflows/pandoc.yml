@@ -27,8 +27,8 @@ jobs:
           for dir in *; do
             # check if there are subdirectories
             if [ -d dir ]; then
-              # go to subdirectory
-              cd dir
+              echo "checking directory $dir for Markdown-files"
+              cd $dir
             fi
             for mdfile in *; do
               if [[ $mdfile = *.md ]]; then
@@ -42,9 +42,11 @@ jobs:
 
 
                 # echo "files=${printf '%s' *.md}" >> $GITHUB_OUTPUT
-              fi
+                fi
+              cd ..
             done
-            cd ..
+            # root dir
+            echo "we're back at the root"
             for mdfile in *; do
               if [[ $mdfile = *.md ]]; then
                 echo "Compiling $mdfile"
