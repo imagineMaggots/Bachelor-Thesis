@@ -25,17 +25,19 @@ jobs:
           echo "Entered $basedir"
 
           # iterate over all directories and subdirectories
-          for dir in "$basedir/*"; do
+          for dir in ${basedir/*}; do
             # enter any existing subdirs
             if [[ -d $dir ]]; then
                 cd "./$dir"
                 echo "Entered $dir"
             fi
-            for mdfile in "$dir/*.md"; do
+            for mdfile in ${dir/*.md}; do
             # Todo: if file exists, obv. otherwise create first
                 if [[ -e $mdfile ]]; then
                   pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
                   echo "Successfully converted $mdfile!"
+                else
+                  echo "### placeholder" >> $mdfile
                 fi
             done
 
