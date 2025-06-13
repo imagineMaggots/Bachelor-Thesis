@@ -26,7 +26,7 @@ jobs:
           # iterate over all directories
           for dir in *; do
             # check if there are subdirectories
-            if [ -d $dir ]; then
+            if [[ -d $dir ]]; then
               echo "checking directory $dir for Markdown-files"
               cd $dir
             fi
