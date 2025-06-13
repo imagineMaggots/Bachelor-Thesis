@@ -49,8 +49,8 @@ jobs:
                   echo "Successfully converted $mdfile!"
                 }
                 fi
-              }
-              fi
+            }
+            fi
             done
           
         env:
