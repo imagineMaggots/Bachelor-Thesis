@@ -23,13 +23,7 @@ jobs:
           basedir="Bachelor-Thesis"
           cd "$basedir"
 
-          # converts all .md files to .pdf and .tex
-          # arguments:
-          #   dir: current working directory. doesn't necessarily have to contain Markdown-files 
-          function conversion ()
-          {
-            local dir=$1
-            
+          for dir in $basedir; do
             # check for any subdirectories
             if [[ -d $dir ]]; then
               cd "$dir"
@@ -43,24 +37,23 @@ jobs:
               cd ..
             else
               # check for any markdown files
-              for mdfile in *; do
+              for mdfile in $dir; do
                 if [[ $mdfile = *.md ]]; then
                   echo "Compiling $mdfile"
 
-                # Pandoc Conversion to .tex and .pdf
-                #  pandoc "$mdfile" -o ${mdfile/.md/}.pdf
-                #  echo "successfully created ${mdfile/.md/}.pdf"
-                #  pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
-                #  echo "successfully created ${mdfile/.md/}.tex"
+                  # Pandoc Conversion to .tex and .pdf
+                  #  pandoc "$mdfile" -o ${mdfile/.md/}.pdf
+                  echo "successfully created ${mdfile/.md/}.pdf"
+                  #  pandoc "$mdfile" -s -o ${mdfile/.md/}.tex
+                  echo "successfully created ${mdfile/.md/}.tex"
 
 
-                # echo "files=${printf '%s' *.md}" >> $GITHUB_OUTPUT
+                  # echo "files=${printf '%s' *.md}" >> $GITHUB_OUTPUT
                 fi
               done
             fi
-          }
+          done
 
-          for dir in $basedir; do conversion $dir; done
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v4
