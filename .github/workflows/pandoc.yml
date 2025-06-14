@@ -2,7 +2,7 @@ name: MdToPdfConversion
 permissions: write-all
 on: 
   push:
-    branches: main
+    branches: submain
 
 jobs:
   convert_via_pandoc:
