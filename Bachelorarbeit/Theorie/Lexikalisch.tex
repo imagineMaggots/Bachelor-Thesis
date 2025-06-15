@@ -5,7 +5,17 @@
 
 
 \chapter{Lexikalische Analyse}
-Test
+% Wie im Drachenbuch neben der Erklärung der Funktionsweise auch selbst einen Compiler implementieren. Für LaTeX, geschrieben in z.B. C++ oder als Shell-Skript (bevorzugt zweiteres).
+Um den Entwurf, bzw. die Entwicklung eines Compilers einfacher - oder besser gesagt übersichtlicher - zu gestalten, lässt sich durch die Aufteilung der Lexikalischen und syntaktischen Analyse die Codecompilierung nach dem Teile und Herrsche Prinzip in kleinere Aufgaben herunterbrechen.
+Müsste der Parser zusätzlich zur Syntaxüberprüfung noch nach z.B. Whitespaces (also Leerzeichen, etc.) ausschau halten, so wäre der entstehende Compilercode deutlich umfangreicher. Insbesondere bei der Entwicklung einer neuen Sprache führt die Aufteilung des Lexens und des Parsens zu einem insgesamt saubereren Design. 
+Auch die Effizienz des entstehenden Compilers wird gefördert, da ein separates Lexen die Möglichkeit bietet spezialisierte Techniken zu verwenden, welche dass Parsen allerdings nicht unterstützen würden. Weiterhin existieren spezialisierte Buffer-Technologien für das Einlesen von Zeichenketten %\parencite{Review_of_Lexical_analyzer_Implementation_Pai_2020}
+Darüber hinaus wird die Kompatibilität  des Compilers erhöht, da Geräte-spezifische Eigenheiten auf die Überprüfung des Lexikons beschränkt werden kann %\parencite[Seite 111]{dragonbook_compiler}.
+\par
+
+Im Wesentlichen interessieren wir uns in dieser Phase für drei ähnliche, aber klar definierte, voneinander abgegrenzte Begriffe. Ein Token ist is ein Name-Wert Paar, wobei der Wert hierbei optional ist und der Name abstrakt die Art der lexikalischen Einheit beschreibt (z.B. ein Buchstabe, eine Zahl, ...). Ein Pattern (zu deutsch: Muster) beschreibt in welcher Reihenfolge die Zeichen eines Lexems des Tokens angeordnet sein dürfen, wobei ein Lexem nun eine Instanz des Tokens innerhalb des Quelltextes handelt. 
+% Beispiel LaTeX-Befehl und Implementierung
+
+% \parencite[Chapter 3]{dragonbook_compiler}
 
 % exclude the following
 \end{document}
